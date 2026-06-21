@@ -1,26 +1,121 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ----------------------------------------------------------------------------
+   World Cup Oracle — design tokens
+   Warm-black tactical canvas, mono data readout, surgical copper + plum accents.
+---------------------------------------------------------------------------- */
+@theme {
+  /* Surfaces — deep warm charcoal, near-black */
+  --color-canvas: oklch(0.155 0.006 70);
+  --color-surface: oklch(0.19 0.006 70);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* Ink ramp — warm off-white down to faint grid grey */
+  --color-ink: oklch(0.93 0.01 85);
+  --color-muted: oklch(0.68 0.012 85);
+  --color-faint: oklch(0.5 0.01 85);
+  --color-line: oklch(0.32 0.006 80);
+
+  /* Accents — copper/gold favourite, deep plum challenger */
+  --color-copper: oklch(0.78 0.12 82);
+  --color-plum: oklch(0.64 0.13 318);
+
+  --font-display: var(--font-archivo);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-feature-settings: "tnum" 1, "cv01" 1;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: var(--color-copper);
+  color: var(--color-canvas);
+}
+
+/* Tactile dot-grid plotted across the full bleed --------------------------- */
+.dot-grid {
+  background-image: radial-gradient(
+    oklch(0.4 0.01 85 / 0.18) 1px,
+    transparent 1.2px
+  );
+  background-size: 22px 22px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(
+    ellipse 120% 100% at 50% 0%,
+    #000 35%,
+    transparent 100%
+  );
+}
+
+/* Range sliders styled as tactical faders — still plain HTML inputs --------- */
+input[type="range"].fader {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type="range"].fader::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--color-line);
+  border-radius: 0;
+}
+input[type="range"].fader::-moz-range-track {
+  height: 2px;
+  background: var(--color-line);
+}
+input[type="range"].fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 5px;
+  height: 18px;
+  margin-top: -8px;
+  background: var(--color-copper);
+  box-shadow: 0 0 0 1px var(--color-canvas), 0 0 14px oklch(0.78 0.12 82 / 0.45);
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+input[type="range"].fader::-moz-range-thumb {
+  width: 5px;
+  height: 18px;
+  border: none;
+  border-radius: 0;
+  background: var(--color-copper);
+  box-shadow: 0 0 0 1px var(--color-canvas), 0 0 14px oklch(0.78 0.12 82 / 0.45);
+}
+input[type="range"].fader:hover::-webkit-slider-thumb {
+  transform: scaleY(1.12);
+}
+input[type="range"].fader:focus-visible {
+  outline: none;
+}
+input[type="range"].fader:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px var(--color-canvas), 0 0 0 3px oklch(0.78 0.12 82 / 0.5);
+}
+
+/* Live telemetry pulse ----------------------------------------------------- */
+@keyframes oracle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 oklch(0.78 0.12 82 / 0.55);
+  }
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 4px oklch(0.78 0.12 82 / 0);
+  }
+}
+.live-dot {
+  animation: oracle-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+  input[type="range"].fader::-webkit-slider-thumb {
+    transition: none;
+  }
 }
