@@ -1,10 +1,10 @@
-# 🏆 World Cup Predictive Oracle: Architectural Blueprint
+ World Cup Predictive Oracle: Architectural Blueprint
 
 This technical specification details the structural methodology, core mathematical modeling, and client-side design architecture powering the World Cup Predictive Oracle platform. It serves as the primary system documentation and repository profile.
 
 ---
 
-## 🧭 1. Core Methodology & Operational Objectives
+1. Core Methodology & Operational Objectives
 
 Traditional sports forecasting models heavily rely on static, historical goal distributions or expensive, high-latency external API queries. The Oracle completely bypasses these structural constraints by implementing a zero-dependency, deterministic frontend predictive matrix optimized specifically for the historic **48-team tournament expansion** (incorporating the new Round of 32 knockout layer).
 
@@ -15,7 +15,7 @@ Traditional sports forecasting models heavily rely on static, historical goal di
 
 ---
 
-## 🧮 2. The Three-Tier Sequential Boosting Engine
+ 2. The Three-Tier Sequential Boosting Engine
 
 When a matchup simulation is triggered, the engine avoids simplistic averaging models. Instead, it routes raw country parameters sequentially through three isolated mathematical calculation layers to output the final match probability vector.
 
@@ -65,11 +65,11 @@ $$\Phi_{\text{chaos}} = 1 + \left( \beta \cdot v \cdot \sin(\omega \cdot \chi) \
 
 ---
 
-## 🌌 3. Premium Visual Intelligence UI Features
+##  3. Premium Visual Intelligence UI Features
 
 The platform leverages custom-engineered SVG layouts to represent complex statistical equations as beautiful, easily scannable interactive interfaces.
 
-### 🛰️ The Rivalry Gravity Well
+###  The Rivalry Gravity Well
 Rather than utilizing cluttered linear graphs, historical head-to-head timelines are plotted as an interactive, physics-based orbital galaxy system.
 
 * **Concentric Orbit Plotting:** The absolute center of the matrix $(100, 100)$ represents a dead-even $0\text{--}0$ gridlock stalemate. Faint geometric rings expand outward; spatial distance from the center directly corresponds to the magnitude of the historical goal margin.
@@ -79,14 +79,14 @@ $$\theta_n = n \times 137.5^\circ$$
 
 * **Temporal Luminescence:** Modern fixtures (stretching up to the active 2026 era) glow with maximum color opacity, while deep historical matches smoothly fade out into ghosted, low-intensity background shadows.
 
-### 🌊 The Kinetic Chaos Ripple
+### The Kinetic Chaos Ripple
 A live-updating SVG path component that visualizes predicted match volatility. As the user moves the variance slider, the path loop re-evaluates its frequency array in real time:
 
 $$y(x) = A(v) \cdot \sum_{k=1}^{3} \frac{1}{k} \sin(k \cdot \omega \cdot x + \phi)$$
 
 This maps abstract perturbation math into concrete visual feedback, flexing from a laser-straight horizon line at 0% variance to an elegant, high-fidelity wave tremor at higher settings.
 
-### 👕 The Generational Impact Vault
+###  The Generational Impact Vault
 A full-width, highly interactive bento module designed to bridge structural nation histories with the physical icons representing them on the pitch.
 
 * **Visual Separation:** Split layouts isolate **Retired Legends** (rendered as low-opacity charcoal wireframe silhouettes) from **Active 2026 Icons** (rendered with maximum-luminance copper or plum accent strokes).
