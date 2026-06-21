@@ -2,16 +2,18 @@
 
 This technical specification details the structural methodology, core mathematical modeling, and client-side design architecture powering the World Cup Predictive Oracle platform. It serves as the primary system documentation and repository profile.
 
----
-
-1. Core Methodology & Operational Objectives
-
-Traditional sports forecasting models heavily rely on static, historical goal distributions or expensive, high-latency external API queries. The Oracle completely bypasses these structural constraints by implementing a zero-dependency, deterministic frontend predictive matrix optimized specifically for the historic **48-team tournament expansion** (incorporating the new Round of 32 knockout layer).
-
-### Strategic Architecture Rationale
-* **Zero Runtime Overhead:** Computation executes natively inside the client browser, eliminating API gateway handshakes, middle-tier processing latency, and database read costs.
-* **Deterministic Hydration Safety:** The underlying math prevents layout-shift penalties and runtime execution disparities between server-side pre-rendering and client-side hydration.
-* **Aesthetic Convergence:** Raw mathematical data sets feed directly into smooth, responsive vector UI primitives designed around a premium dark-mode aesthetic.
+-
+1. Project Vision and Strategic Rationale
+The Core Problem
+Traditional sports forecasting platforms suffer from critical structural limitations:
+Scalability Bottlenecks: The expansion of the FIFA World Cup to a 48-team format introduces a new "Round of 32" knockout tier, exponentially increasing calculation complexity across simulated bracket trees. Traditional platforms struggle to map these structures fluidly without severe layout shifts or performance degradation.
+Prohibitive Infrastructure Costs: Continuous server-side simulation pipelines require constant database querying and expensive third-party sports data API maintenance, scaling runtime operational costs alongside user traffic.
+Low-Fidelity Data Presentation: Standard analytics tools rely on sterile, text-heavy data tables or non-interactive static charting libraries, creating an analytical disconnect for user interpretation.
+The Solution: System Objectives
+The World Cup Predictive Oracle resolves these friction points by establishing a zero-dependency, deterministic frontend simulation workspace. By shifting complex data transformation pipelines directly to the client browser, the system accomplishes:
+Zero Runtime Server Costs: Eliminates server infrastructure dependencies, ensuring infinite scaling at zero host-compute overhead.
+Hydration Security: Eliminates data serialization mismatches between server-side pre-rendering (SSR) and client-side execution, guaranteeing fluid UI rendering.
+High-Fidelity Interface Convergence: Translates abstract multivariate probability metrics directly into custom vector visual assets natively inside a responsive dark-mode layout.
 
 ---
 
