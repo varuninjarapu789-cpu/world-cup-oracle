@@ -2,13 +2,17 @@
 
 This technical specification details the structural methodology, core mathematical modeling, and client-side design architecture powering the World Cup Predictive Oracle platform. It serves as the primary system documentation and repository profile.
 
--
+
 1. Project Vision and Strategic Rationale
 The Core Problem
 Traditional sports forecasting platforms suffer from critical structural limitations:
 Scalability Bottlenecks: The expansion of the FIFA World Cup to a 48-team format introduces a new "Round of 32" knockout tier, exponentially increasing calculation complexity across simulated bracket trees. Traditional platforms struggle to map these structures fluidly without severe layout shifts or performance degradation.
+
 Prohibitive Infrastructure Costs: Continuous server-side simulation pipelines require constant database querying and expensive third-party sports data API maintenance, scaling runtime operational costs alongside user traffic.
+
 Low-Fidelity Data Presentation: Standard analytics tools rely on sterile, text-heavy data tables or non-interactive static charting libraries, creating an analytical disconnect for user interpretation.
+
+
 The Solution: System Objectives
 The World Cup Predictive Oracle resolves these friction points by establishing a zero-dependency, deterministic frontend simulation workspace. By shifting complex data transformation pipelines directly to the client browser, the system accomplishes:
 Zero Runtime Server Costs: Eliminates server infrastructure dependencies, ensuring infinite scaling at zero host-compute overhead.
